@@ -1,0 +1,16 @@
+Bundle-Category: CRM - Customer Relationship Management
+Bundle-ContactAddress: https://www.dontesta.it/contatti
+Bundle-Copyright: Antonio Musarra's Blog (c) 2018
+Bundle-Description: A sample CRM integration API
+Bundle-Developers: antonio.musarra@gmail.com
+Bundle-DocURL: https://www.dontesta.it/liferay-crm-sample-integration
+Bundle-License: MIT License
+Bundle-Name: CRM Integration Sample API
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: it.dontesta.labs.liferay.crm.api
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-Version: 1.0.0
+Export-Package:\
+	it.dontesta.labs.liferay.crm.api.exception,\
+	it.dontesta.labs.liferay.crm.api.model,\
+	it.dontesta.labs.liferay.crm.api.service

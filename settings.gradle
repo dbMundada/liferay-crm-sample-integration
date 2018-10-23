@@ -1,0 +1,9 @@
+include(
+        'crm-user-custom-fields',
+        'crm-user-message-bus',
+        'crm-user-model-listener',
+		'crm-sample-integration-api',
+        'salesforce-sample-integration-service',
+		'suitecrm-sample-integration-service',
+		'opencrx-sample-integration-service'
+)

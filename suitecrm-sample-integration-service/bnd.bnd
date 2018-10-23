@@ -1,0 +1,12 @@
+Bundle-Category: CRM - Customer Relationship Management
+Bundle-ContactAddress: https://www.dontesta.it/contatti
+Bundle-Copyright: Antonio Musarra's Blog (c) 2018
+Bundle-Description: A sample Salesforce integration Service
+Bundle-Developers: antonio.musarra@gmail.com
+Bundle-DocURL: https://www.dontesta.it/liferay-crm-sample-integration
+Bundle-License: MIT License
+Bundle-Name: SuiteCRM Integration Sample Service
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: it.dontesta.labs.liferay.crm.suitecrm
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-Version: 1.0.0
