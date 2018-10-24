@@ -39,6 +39,32 @@ import com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClass
 public interface SuiteCRMClientGroupConfiguration {
 
 	@Meta.AD(
+		deflt = "https://suitecrm.example.org/Api/access_token",
+		name = "access-token-url", description = "access-token-url-description",
+		required = false
+	)
+	public String accessTokenURL();
+
+	@Meta.AD(
+		deflt = "", name = "client-id", description = "client-id-description",
+		required = false
+	)
+	public String clientId();
+
+	@Meta.AD(
+		deflt = "", name = "client-secret",
+		description = "client-secret-description", required = false,
+		type = Meta.Type.Password
+	)
+	public String clientSecret();
+
+	@Meta.AD(
+		deflt = "", name = "scopes", description = "scopes-description",
+		required = false, type = Meta.Type.Password
+	)
+	public String scopes();
+
+	@Meta.AD(
 		deflt = "", name = "username", description = "username-description",
 		required = false
 	)
@@ -49,5 +75,12 @@ public interface SuiteCRMClientGroupConfiguration {
 		required = false, type = Meta.Type.Password
 	)
 	public String password();
+
+	@Meta.AD(
+		deflt = "https://suitecrm.example.org/",
+		name = "suitecrm-root-instance-url",
+		description = "suitecrm-root-instance-url-description", required = false
+	)
+	public String suitecrmRootInstanceURL();
 
 }

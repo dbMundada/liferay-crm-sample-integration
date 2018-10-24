@@ -50,4 +50,11 @@ public interface OpenCRXClientGroupConfiguration {
 	)
 	public String password();
 
+	@Meta.AD(
+		deflt = "http://opencrx.example.org/opencrx-rest-CRX/",
+		name = "service-endpoint", description = "service-endpoint-description",
+		required = false
+	)
+	public String serviceEndPoint();
+
 }
