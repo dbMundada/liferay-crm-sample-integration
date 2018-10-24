@@ -1,4 +1,4 @@
-# Liferay 7.1 CRM Sample Integration Quick Start
+# Liferay 7.1 The CRM Integration Quick Start
 [![Antonio Musarra's Blog](https://img.shields.io/badge/maintainer-Antonio_Musarra's_Blog-purple.svg?colorB=6e60cc)](https://www.dontesta.it)
 [![Build Status](https://travis-ci.org/amusarra/liferay-portal-security-audit.svg?branch=master)](https://travis-ci.org/amusarra/liferay-crm-sample-integration)
 [![Twitter Follow](https://img.shields.io/twitter/follow/antonio_musarra.svg?style=social&label=%40antonio_musarra%20on%20Twitter&style=plastic)](https://twitter.com/antonio_musarra)
@@ -20,6 +20,7 @@ the CRM system, where it will be created as Lead. The figure below shows the
 integration case implemented in this project.
 
 ![Figure 1 - Integration scenario Liferay 7.1 and CRM System via API](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_1.png)
+
 Figure 1 - Integration scenario Liferay 7.1 and CRM System via API
 
 For integration with Salesforce, this project uses as dependency the 
@@ -30,7 +31,7 @@ https://github.com/amusarra/salesforce-client-soap
 The **salesforce-client-soap bundle installation** on the Liferay instance is an 
 *important requirement* in order to make integration with Salesforce work.
 
-In this project the following topics of the Liferay 7 / 7.1 platform were 
+In this project the following topics of the Liferay 7/7.1 platform were 
 addressed, which are:
 
 * OSGi and modularity - https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity
@@ -62,6 +63,7 @@ The components offered by the Liferay platform used are:
 * OSGi Configuration
 
 ![Figure 2 - Liferay CRM Sample Integration - Architecture](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_2.png)
+
 Figure 2 - Liferay CRM Sample Integration - Architecture
 
 In short. For each new user who registers (*Login Form => Create Account*) on 
@@ -73,6 +75,7 @@ The figure below shows the diagram of the modules and the relationships between
 them.
 
 ![Figure 3 - Liferay CRM Sample Integration - Component diagram](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_3.png)
+
 Figure 3 - Liferay CRM Sample Integration - Component diagram
 
 The table below describes the responsibility of each module.
@@ -107,15 +110,19 @@ There are two configurations with scope at the instance (or company) level and w
 The following figures show each of the configurations indicated above.
 
 ![Figure 4 - Liferay CRM Integration Sample - Enable CRM Service Configuration](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_Configuration_1.png)
+
 Figure 4 - Liferay CRM Integration Sample - Enable CRM Service Configuration
 
 ![Figure 5 - Liferay CRM Integration Sample - OpenCRX RESTful Client Configuration](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_Configuration_2.png)
+
 Figure 5 - Liferay CRM Integration Sample - OpenCRX RESTful Client Configuration
 
 ![Figure 6 - Liferay CRM Integration Sample - Salesforce SOAP Client Configuration](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_Configuration_3.png)
+
 Figure 7 - Liferay CRM Integration Sample - Salesforce SOAP Client Configuration
 
 ![Figure 7 - Liferay CRM Integration Sample - SuiteCRM Rest Client Configuration](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_Configuration_4.png)
+
 Figure 7 - Liferay CRM Integration Sample - SuiteCRM Rest Client Configuration
 
 ## 4. Integration in action
@@ -126,10 +133,30 @@ you have added a new account on Liferay you should have the relative Lead on the
 Salesforce and on Liferay you should see the custom field updated.
 
 ![Figure 8 - Liferay CRM Integration Sample - View User Account](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_Create_Account_1.png)
+
 Figure 8 - Liferay CRM Integration Sample - View User Account
 
 ![Figure 9 - Liferay CRM Integration Sample - View Lead on Salesforce](https://www.dontesta.it/wp-content/uploads/2018/10/LiferayCRMIntegrationSample_Create_Account_2.png)
+
 Figure 9 - Liferay CRM Integration Sample - View Lead on Salesforce
+
+Following is an example of logs that highlight the operations of integration 
+with the CRM system.
+
+```
+2018-10-23 10:06:46.084 DEBUG [salesforce/send_lead-1][SalesforceUserRequestMessageListerner:42] Action: add
+2018-10-23 10:06:46.085 DEBUG [salesforce/send_lead-1][SalesforceUserRequestMessageListerner:43] Receive this payload
+[WSC][Thread.run:748]Log file already exists, appending to /tmp/traceSalesforceEnterprise.log
+2018-10-23 10:06:46.317 DEBUG [http-nio-8080-exec-3][CRMUserModelListener:60] Get Configuration interface it.dontesta.labs.liferay.crm.listener.user.configuration.CRMGroupServiceConfiguration for companyId: 20099
+2018-10-23 10:06:46.318 DEBUG [http-nio-8080-exec-3][CRMUserModelListener:73] CRM Salesforce enabled: true
+2018-10-23 10:06:46.319 DEBUG [http-nio-8080-exec-3][CRMUserModelListener:75] CRM SuiteCRM enabled: false
+2018-10-23 10:06:46.320 DEBUG [http-nio-8080-exec-3][CRMUserModelListener:77] CRM OpenCRX enabled: false
+2018-10-23 10:06:48.606 INFO  [salesforce/send_lead-1][SalesforceBaseService:95] Successfully created lead with id of: 00Q0O000016m5g3UAA.
+2018-10-23 10:06:49.222 INFO  [salesforce/send_lead-1][SalesforceUserRequestMessageListerner:95] User custom fields updated for user: antonio.musarra@gmail.com
+2018-10-23 10:06:49.223 INFO  [salesforce/send_lead-1][SalesforceUserRequestMessageListerner:75] Lead created on CRM target system with id: 00Q0O000016m5g3UAA
+```
+
+Console 1 - Log of CRM Integration components in action
 
 ### Resources
 If you follow this resources you could see how to use Salesforce SOAP API.
