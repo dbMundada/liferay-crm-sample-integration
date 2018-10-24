@@ -1,6 +1,6 @@
 MIT License
 
-Example of sample integration with the CRM System (Salesforce.com, SuiteCRM and
+Examples integration with the CRM System (Salesforce.com, SuiteCRM and
 OpenCRX). 
 
 Copyright (c) 2018 Antonio Musarra's Blog - https://www.dontesta.it
