@@ -11,4 +11,5 @@ Bundle-SymbolicName: it.dontesta.labs.liferay.crm.messaging
 Bundle-Vendor: Antonio Musarra's Blog
 Bundle-Version: 1.0.0
 Export-Package: 	it.dontesta.labs.liferay.crm.messaging.constants.*
+Liferay-Service: true
 Liferay-Spring-Context: META-INF/spring
