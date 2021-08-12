@@ -19,6 +19,10 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import com.sforce.soap.partner.*;
+import com.sforce.soap.partner.sobject.*;
+import com.sforce.ws.*;
+
 package it.dontesta.labs.liferay.crm.api.service;
 
 import it.dontesta.labs.liferay.crm.api.exception.LeadException;
